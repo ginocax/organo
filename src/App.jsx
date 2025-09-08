@@ -1,7 +1,13 @@
-import Banner from "./components/Banner/Banner";
+import { Banner } from "./components/Banner/Index";
+import { Form } from "./components/Form";
 
 function App() {
-  return <Banner />;
+  return (
+    <div className="App">
+      <Banner />
+      <Form />
+    </div>
+  );
 }
 
 export default App;
