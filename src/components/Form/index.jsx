@@ -5,29 +5,19 @@ import { Button } from "../Button";
 import "./Form.css";
 
 export const Form = (props) => {
-  const times = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
-  const [nome, setNome] = useState("");
+  const [name, setName] = useState("");
   const [cargo, setCargo] = useState("");
-  const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
+  const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
 
   const onSave = (evento) => {
     evento.preventDefault();
 
     props.onNewCollaborator({
-      nome,
+      name,
       cargo,
-      imagem,
-      time,
+      image,
+      team,
     });
   };
 
@@ -39,8 +29,8 @@ export const Form = (props) => {
           required={true}
           label="Nome"
           placeholder="Digite seu nome"
-          value={nome}
-          onTyped={(value) => setNome(value)}
+          value={name}
+          onTyped={(value) => setName(value)}
         />
         <Textinput
           required={true}
@@ -53,15 +43,15 @@ export const Form = (props) => {
           required={true}
           label="Imagem"
           placeholder="Digite o endereço da imagem"
-          value={imagem}
-          onTyped={(value) => setImagem(value)}
+          value={image}
+          onTyped={(value) => setImage(value)}
         />
         <Dropdown
           required={true}
           label="Times"
-          itens={times}
-          value={time}
-          onTyped={(value) => setTime(value)}
+          itens={props.teams}
+          value={team}
+          onTyped={(value) => setTeam(value)}
         />
         <Button>Criar Card</Button>
       </form>
