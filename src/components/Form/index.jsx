@@ -19,12 +19,17 @@ export const Form = (props) => {
       image,
       team,
     });
+
+    setName("");
+    setCargo("");
+    setImage("");
+    setTeam("");
   };
 
   return (
     <section className="form">
       <form onSubmit={onSave}>
-        <h2>Preencha os dados para criar o card do colaborador:</h2>
+        <h2>Preencha os dados para criar o card do colaborador</h2>
         <Textinput
           required={true}
           label="Nome"
